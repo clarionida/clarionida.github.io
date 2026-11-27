@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · clariónida</title>
+<meta name="robots" content="noindex">
+<script>
+  // Cualquier ruta vieja de la extensión (/antiResumenIA/...) se manda a /buscar-sin-ia/...
+  (function () {
+    var m = location.pathname.match(/^\/antiresumenia(\/.*)?$/i);
+    if (m) location.replace('/buscar-sin-ia' + (m[1] || '/') + location.search + location.hash);
+  })();
+</script>
+<meta name="theme-color" content="#E1DAC9">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="/assets/css/estilo.css">
+<script src="/assets/js/config.js" defer></script>
+<script src="/assets/js/sitio.js" defer></script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="contenedor cabecera">
+  <a class="marca" href="/">
+    <img src="/assets/img/logo-clarionida.png" alt="" width="359" height="316">
+    <span>clariónida</span>
+  </a>
+  <nav class="nav" aria-label="Principal">
+    <a href="/#palabra">La palabra</a>
+    <a href="/#videoensayos">Videoensayos</a>
+    <a href="/#cartas">Cartas</a>
+    <a href="/#taller">Taller</a>
+    <a href="/#acerca">Acerca</a>
+  </nav>
+  <a class="boton boton--chico" href="/#cartas">Suscríbete<span class="solo-ancho">&nbsp;a las cartas</span></a>
+</header>
+
+<main id="contenido" class="contenedor">
+  <section class="acepcion acepcion--cierre" style="padding-block: 96px" aria-labelledby="t-404">
+    <div class="acepcion__num" style="flex-basis: auto" aria-hidden="true">404.</div>
+    <div class="acepcion__cuerpo">
+      <h1 class="definicion" style="font-weight: 400" id="t-404"><i>f.</i> Página que no existe o que cambió de lugar.</h1>
+      <p class="mas"><a href="/">Volver al inicio →</a></p>
+      <p class="dato" style="margin-top: 12px"><a href="/enlaces/">Ver todos los enlaces</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__dentro">
+    <nav aria-label="Redes">
+      <a href="https://www.youtube.com/@clarionida">YouTube</a>
+      <a href="https://www.instagram.com/clarionida">Instagram</a>
+      <a href="https://www.tiktok.com/@clarionida">TikTok</a>
+      <a href="https://www.facebook.com/clarionida">Facebook</a>
+      <a href="https://x.com/clarionida">X</a>
+      <a data-enlace="whatsapp" data-si-enlace="whatsapp" href="#" hidden>WhatsApp</a>
+    </nav>
+    <nav class="idiomas" aria-label="Idioma">
+      <a href="/" hreflang="es" lang="es">Español</a>
+      <a href="/en/" hreflang="en" lang="en">English</a>
+      <a href="/pt/" hreflang="pt" lang="pt">Português</a>
+    </nav>
+    <span class="pie__firma">© <span data-anio>2026</span> Clariónida · clarionida.com</span>
+  </div>
+</footer>
+</body>
+</html>

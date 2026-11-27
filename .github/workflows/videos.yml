@@ -1,0 +1,38 @@
+name: Actualizar videos de YouTube
+
+on:
+  schedule:
+    - cron: '23 10 * * *'   # una vez al día (10:23 UTC)
+  workflow_dispatch:         # botón "Run workflow" en la pestaña Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: actualizar-videos
+  cancel-in-progress: false
+
+jobs:
+  videos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Bajar el feed y escribir data/videos.json
+        run: node scripts/actualizar-videos.mjs
+
+      - name: Commit solo si hubo cambios
+        run: |
+          if git diff --quiet -- data/videos.json; then
+            echo "Sin cambios en data/videos.json"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/videos.json
+          git commit -m "Actualiza videos de YouTube"
+          git push
