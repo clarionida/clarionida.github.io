@@ -13,6 +13,9 @@ window.CLARIONIDA = {
     substack: '',
     // Enlace de la libreta en Amazon, cuando KDP la apruebe
     amazonLibreta: '',
+    // Edición en inglés de la libreta (sección English de /libreta).
+    // Si es el mismo libro, repite aquí el mismo enlace.
+    amazonLibretaEn: '',
     // Enlace a la última carta publicada en Substack
     ultimaCarta: ''
   },

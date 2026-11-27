@@ -26,8 +26,34 @@
     el.textContent = String(new Date().getFullYear());
   });
 
-  /* ---------- Mensajes de formularios ---------- */
-  function mensaje(form, texto, esError) {
+  /* ---------- Mensajes de formularios (según el idioma de la sección) ---------- */
+  var TEXTOS = {
+    es: {
+      cartasPendiente: '[Mensaje mientras las cartas no estén conectadas a Substack]',
+      formPendiente: '[Formulario sin conectar: falta el endpoint de Formspree en config.js]',
+      enviado: 'Enviado. Gracias.',
+      error: 'No se pudo enviar. Inténtalo de nuevo en un momento.'
+    },
+    en: {
+      cartasPendiente: '[Message while the letters are not connected to Substack]',
+      formPendiente: '[Form not connected: Formspree endpoint missing in config.js]',
+      enviado: 'Sent. Thank you.',
+      error: 'Could not send. Please try again in a moment.'
+    },
+    pt: {
+      cartasPendiente: '[Mensagem enquanto as cartas não estiverem conectadas ao Substack]',
+      formPendiente: '[Formulário não conectado: falta o endpoint do Formspree em config.js]',
+      enviado: 'Enviado. Obrigado.',
+      error: 'Não foi possível enviar. Tente de novo em um momento.'
+    }
+  };
+  function texto(el, clave) {
+    var nodo = el.closest('[lang]') || document.documentElement;
+    var lang = (nodo.getAttribute('lang') || 'es').slice(0, 2);
+    return (TEXTOS[lang] || TEXTOS.es)[clave];
+  }
+
+  function mensaje(form, contenido, esError) {
     var p = form.querySelector('[data-mensaje]');
     if (!p) {
       p = document.createElement('p');
@@ -36,7 +62,7 @@
       form.appendChild(p);
     }
     p.className = 'mensaje-form' + (esError ? ' mensaje-form--error' : '');
-    p.textContent = texto;
+    p.textContent = contenido;
   }
 
   /* ---------- Formulario de las cartas (Substack) ----------
@@ -51,7 +77,7 @@
     }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      mensaje(form, '[Mensaje mientras las cartas no estén conectadas a Substack]', false);
+      mensaje(form, texto(form, 'cartasPendiente'), false);
     });
   });
 
@@ -61,7 +87,7 @@
       e.preventDefault();
       var destino = C.formularioClarionida;
       if (!destino) {
-        mensaje(form, '[Formulario sin conectar: falta el endpoint de Formspree en config.js]', true);
+        mensaje(form, texto(form, 'formPendiente'), true);
         return;
       }
       var boton = form.querySelector('button[type="submit"]');
@@ -73,9 +99,9 @@
       }).then(function (r) {
         if (!r.ok) throw new Error(String(r.status));
         form.reset();
-        mensaje(form, 'Enviado. Gracias.', false);
+        mensaje(form, texto(form, 'enviado'), false);
       }).catch(function () {
-        mensaje(form, 'No se pudo enviar. Inténtalo de nuevo en un momento.', true);
+        mensaje(form, texto(form, 'error'), true);
       }).then(function () {
         if (boton) boton.disabled = false;
       });

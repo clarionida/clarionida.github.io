@@ -278,3 +278,9 @@ textarea.campo { resize: vertical; min-height: 140px; }
   .ficha { grid-template-columns: 1fr; gap: 2px; font-size: 18px; }
   .ficha dd { margin-bottom: 12px; }
 }
+
+/* ---------- Idiomas ---------- */
+.idiomas { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.idiomas a[aria-current] { font-weight: 700; text-decoration: none; }
+.bio__idiomas { margin-top: 16px; font-size: 15px; }
+.cambio-idioma { margin: 0 0 20px; font-size: 16px; font-weight: 600; }

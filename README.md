@@ -11,7 +11,11 @@ Sitio estático de Clariónida: HTML, CSS y JS sin framework, publicado con GitH
 | `/libreta` | `libreta/index.html` (destino del QR de la libreta Habit tracker 2027) |
 | `/enlaces` | `enlaces/index.html` (link-in-bio) |
 | `/apoya` | `apoya/index.html` (donaciones con Stripe) |
-| cualquier otra | `404.html` |
+| `/en`, `/pt` | `en/index.html`, `pt/index.html` (presentación breve en inglés y portugués) |
+| `/antiResumenIA`, `/antiResumenIA/en` | redirigen a `/buscar-sin-ia/` (ruta vieja de la extensión) |
+| cualquier otra | `404.html` (si empieza con `/antiResumenIA/`, también redirige a `/buscar-sin-ia/`) |
+
+`/buscar-sin-ia/` no está en este repo: es el project site del repo `clarionida/buscar-sin-ia` (antes `antiResumenIA`), que GitHub Pages publica bajo este dominio.
 
 - `assets/css/estilo.css`: todos los estilos. Los colores y las tipografías están al principio, como variables.
 - `assets/js/config.js`: **lo único que hay que tocar para conectar lo pendiente** (WhatsApp, Substack, Amazon, Formspree, analítica).
@@ -42,13 +46,19 @@ Después de fusionar a `main`, ejecútala una vez a mano para llenar `data/video
 - `formularioClarionida`: endpoint de Formspree (plan gratis) para "Cuéntanos tu clariónida".
 - `cloudflareToken`: Cloudflare Web Analytics (sin cookies). Cuenta visitas por página, incluida `/libreta`.
 
+## Idiomas
+
+El sitio principal está en español, igual que los videoensayos y las cartas. `/en` y `/pt` son páginas breves que presentan el proyecto y llevan a las versiones en ese idioma de las herramientas del taller. `/libreta` tiene una sección en inglés (`#english`) porque la libreta es bilingüe. Las traducciones de los textos provisionales también son provisionales.
+
 ## Publicar en clarionida.com
 
-### 1. Repositorio
+### 1. Repositorios (en este orden)
 
-Para que los project sites de la cuenta sin dominio propio (como `antiResumenIA`) queden también en `clarionida.com/antiResumenIA`, este repo tiene que ser el **sitio de usuario**, es decir, llamarse `clarionida.github.io`. Renómbralo en Settings → General → Repository name. GitHub redirige el nombre viejo.
+1. Renombra **este** repo a `clarionida.github.io` (Settings → General → Repository name). Así es el sitio de usuario y los project sites sin dominio propio quedan bajo `clarionida.com/<repo>`.
+2. Renombra `antiResumenIA` a `buscar-sin-ia`. Su página queda en `clarionida.com/buscar-sin-ia/`. No vuelvas a crear un repo llamado `antiResumenIA`: rompería la redirección que GitHub hace de los enlaces viejos del repo.
+3. Fusiona a `main` los cambios de los dos repos y vuelve a correr el workflow "Publicar página web" de `buscar-sin-ia` (pestaña Actions).
 
-Si se queda como `clarionida.com`, el sitio funciona igual en `clarionida.com`, pero la extensión seguirá en `clarionida.github.io/antiResumenIA/`.
+GitHub Pages no redirige solo después de renombrar un repo. Por eso este sitio tiene páginas en `/antiResumenIA/` que mandan a `/buscar-sin-ia/`, y `clarionida.github.io/antiResumenIA/` llega a ellas porque GitHub manda todo `clarionida.github.io` al dominio propio.
 
 ### 2. GitHub Pages
 

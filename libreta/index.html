@@ -45,6 +45,7 @@
 <main id="contenido" class="contenedor pagina">
 
   <section class="seccion" aria-labelledby="t-libreta">
+    <p class="cambio-idioma"><a href="#english" hreflang="en" lang="en">English ↓</a></p>
     <p class="antetitulo">Libreta impresa</p>
     <h1 class="titulo-1" id="t-libreta">Habit tracker 2027</h1>
     <p class="entradilla">[Bienvenida para quien escaneó el QR de la libreta. Texto de Damiana.]</p>
@@ -93,10 +94,38 @@
         <span class="tarjeta__tipo">Extensión para Chrome</span>
         <h3>Buscar sin IA</h3>
         <p>Oculta resúmenes de IA y anuncios para Google™. Gratis.</p>
-        <a class="tarjeta__enlace" href="https://clarionida.github.io/antiResumenIA/">Conocer la extensión →</a>
+        <a class="tarjeta__enlace" href="/buscar-sin-ia/">Conocer la extensión →</a>
       </div>
     </div>
     <p class="dato" style="margin-top: 28px"><a href="/clarionida/">¿Qué es una clariónida? →</a></p>
+  </section>
+
+  <section class="seccion" id="english" lang="en" aria-labelledby="t-english">
+    <p class="antetitulo">Printed notebook · English</p>
+    <h2 class="titulo-1" id="t-english">Habit tracker 2027</h2>
+    <p class="entradilla">[Welcome for people who scanned the QR code in the notebook. Text by Damiana, in English.]</p>
+    <p data-si-enlace="amazonLibretaEn" hidden><a class="boton" data-enlace="amazonLibretaEn" href="#">See the notebook on Amazon</a></p>
+
+    <h3 class="titulo-3" style="margin-top: 40px">How to use the notebook</h3>
+    <p>[How to use the notebook. Text by Damiana, in English.]</p>
+
+    <h3 class="titulo-3" style="margin-top: 40px">The letters</h3>
+    <p>A letter with things worth looking at, hand-picked: articles, music, paintings, videos, and a few personal lines to go with them. Written in Spanish.</p>
+    <form class="form-cartas" data-cartas>
+      <label>Your email
+        <input class="campo" type="email" name="email" placeholder="name@email.com" autocomplete="email" required>
+      </label>
+      <button class="boton" type="submit">Get the letters</button>
+    </form>
+
+    <h3 class="titulo-3" style="margin-top: 40px">More from the workshop</h3>
+    <ul>
+      <li><a href="https://www.instagram.com/clarionida">Instagram: @clarionida</a></li>
+      <li><a href="https://www.youtube.com/@clarionida">Video essays on YouTube</a> (in Spanish)</li>
+      <li><a href="https://cuantodormir.com/en/"><span lang="es">cuánto dormir</span></a>: sleep cycle calculator</li>
+      <li><a href="/buscar-sin-ia/en/">Search Without AI</a>: hides AI Overviews and ads on Google™</li>
+      <li><a href="/en/">Clariónida in English</a></li>
+    </ul>
   </section>
 
 </main>
@@ -110,6 +139,11 @@
       <a href="https://www.facebook.com/clarionida">Facebook</a>
       <a href="https://x.com/clarionida">X</a>
       <a data-enlace="whatsapp" data-si-enlace="whatsapp" href="#" hidden>WhatsApp</a>
+    </nav>
+    <nav class="idiomas" aria-label="Idioma">
+      <a href="/" hreflang="es" lang="es">Español</a>
+      <a href="/en/" hreflang="en" lang="en">English</a>
+      <a href="/pt/" hreflang="pt" lang="pt">Português</a>
     </nav>
     <span class="pie__firma">© <span data-anio>2026</span> Clariónida · clarionida.com</span>
   </div>
