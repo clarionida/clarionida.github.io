@@ -48,7 +48,7 @@ Después de fusionar a `main`, ejecútala una vez a mano para llenar `data/video
 
 ## Idiomas
 
-El sitio principal está en español, igual que los videoensayos y las cartas. `/en` y `/pt` son páginas breves que presentan el proyecto y llevan a las versiones en ese idioma de las herramientas del taller. `/libreta` tiene una sección en inglés (`#english`) porque la libreta es bilingüe. Las traducciones de los textos provisionales también son provisionales.
+El sitio principal está en español, igual que los videoensayos y las cartas. Los videoensayos tienen subtítulos oficiales y pista de audio en inglés y portugués en YouTube; las cartas son solo en español. `/en` y `/pt` son páginas breves que presentan el proyecto y llevan a las versiones en ese idioma de las herramientas del taller. `/libreta` tiene una sección en inglés (`#english`) porque la libreta es bilingüe. Las traducciones de los textos provisionales también son provisionales.
 
 ## Publicar en clarionida.com
 
